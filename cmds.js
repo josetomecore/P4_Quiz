@@ -405,8 +405,8 @@ errorlog(socket, 'El quiz es erroneo:');
          };
    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
     exports.creditsCmd=(socket, rl)=>{
-    console.log(socket, "Jose Tome Mayo");
-    console.log(socket, "josetomemayo");
+    log(socket, "Jose Tome Mayo");
+    log(socket, "josetomemayo");
     
 
     rl.prompt();
