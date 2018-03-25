@@ -161,7 +161,7 @@ log(socket, `${colorize('Se ha añadido','magenta')}: ${quiz.question} ${coloriz
     };
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    
-    exports.testCmd=(socket, rl,id)=>{
+     exports.testCmd=(socket, rl,id)=>{
       
   
   
@@ -182,24 +182,17 @@ log(socket, `${colorize('Se ha añadido','magenta')}: ${quiz.question} ${coloriz
   
     return makeQuestion(rl, quiz.question)
 
-        .then ( a =>{
-
-        if (quiz.answer===a) {
-
-            console.log(socket, "Su respuesta es correcta");
-    return;
-    
-
+        .then(answer => {
+        if(answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
+          
+         log(socket, "Su respuesta es correcta.");
+        
+          
+        } else {
+         log(socket, "Su respuesta es incorrecta.");
+        
         }
-        else{
-
-            console.log(socket, "Su respuesta es incorrecta");
-    return;
-    }
-    
-  
-               
-        });
+      })
 
 })
 
